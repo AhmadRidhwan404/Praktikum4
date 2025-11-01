@@ -99,7 +99,7 @@ for j in range(len(bilangan_acak)): # Tampilkan hasil
 - Setiap kali program dijalankan akan menghasilkan bilangan yang berbeda
 - Program akan terus mencoba hingga mendapatkan `n` bilangan yang memenuhi kriteria (< 0.5)
 
-      **##LATIHAN 3.PY**
+      **##LATIHAN 2.PY**
 
 # Simulasi Mesin ATM
 
@@ -204,3 +204,6 @@ saldo = 1000000  # Ubah nilai ini sesuai kebutuhan
 
 
 **Catatan**: Program ini adalah simulasi sederhana untuk tujuan pembelajaran dan tidak terhubung dengan sistem perbankan nyata.
+
+    **##LATIHAN 2.PY**
+
