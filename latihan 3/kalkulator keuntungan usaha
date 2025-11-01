@@ -1,0 +1,106 @@
+def format_rupiah(angka):
+    """Fungsi untuk memformat angka menjadi format Rupiah"""
+    return f"Rp {angka:,.0f}".replace(',', '.')
+
+def hitung_keuntungan_usaha():
+    """Menghitung keuntungan usaha selama 8 bulan"""
+    
+    # Modal awal
+    modal_awal = 100_000_000
+    
+    print("="*60)
+    print("PERHITUNGAN KEUNTUNGAN USAHA")
+    print("="*60)
+    print(f"Modal Awal: {format_rupiah(modal_awal)}")
+    print("="*60)
+    
+    # Inisialisasi variabel
+    total_modal = modal_awal
+    total_keuntungan = 0
+    persentase_laba = 0
+    
+    # Array untuk menyimpan detail per bulan
+    detail_bulanan = []
+    
+    # Perhitungan per bulan
+    for bulan in range(1, 9):
+        laba_bulan = 0
+        keterangan = ""
+        
+        if bulan == 1 or bulan == 2:
+            # Bulan 1 dan 2: Belum ada laba
+            persentase_laba = 0
+            laba_bulan = 0
+            keterangan = "Belum ada laba"
+        
+        elif bulan == 3 or bulan == 4:
+            # Bulan 3-4: Mulai mendapat laba 1%
+            persentase_laba = 1
+            laba_bulan = modal_awal * (persentase_laba / 100)
+            keterangan = f"Laba {persentase_laba}%"
+        
+        elif bulan == 5 or bulan == 6 or bulan == 7:
+            # Bulan 5-7: Pendapatan meningkat 5%
+            persentase_laba = 5
+            laba_bulan = modal_awal * (persentase_laba / 100)
+            keterangan = f"Laba meningkat menjadi {persentase_laba}%"
+        
+        elif bulan == 8:
+            # Bulan 8: Penurunan 2%, sehingga laba menjadi 3%
+            persentase_laba = 3
+            laba_bulan = modal_awal * (persentase_laba / 100)
+            keterangan = f"Laba turun menjadi {persentase_laba}%"
+        
+        # Tambahkan ke total
+        total_keuntungan += laba_bulan
+        total_modal += laba_bulan
+        
+        # Simpan detail bulan
+        detail_bulanan.append({
+            'bulan': bulan,
+            'persentase': persentase_laba,
+            'laba': laba_bulan,
+            'keterangan': keterangan,
+            'total_modal': total_modal
+        })
+    
+    # Tampilkan detail per bulan
+    print("\nRINCIAN PER BULAN:")
+    print("-"*60)
+    print(f"{'Bulan':<8} {'Laba %':<10} {'Laba Bulan':<20} {'Total Modal':<20}")
+    print("-"*60)
+    
+    for detail in detail_bulanan:
+        print(f"{detail['bulan']:<8} {detail['persentase']:<10} "
+              f"{format_rupiah(detail['laba']):<20} "
+              f"{format_rupiah(detail['total_modal']):<20}")
+        print(f"         {detail['keterangan']}")
+        print()
+    
+    # Tampilkan ringkasan
+    print("="*60)
+    print("RINGKASAN KEUNTUNGAN")
+    print("="*60)
+    print(f"Modal Awal           : {format_rupiah(modal_awal)}")
+    print(f"Total Keuntungan     : {format_rupiah(total_keuntungan)}")
+    print(f"Total Modal + Laba   : {format_rupiah(total_modal)}")
+    print(f"Persentase Keuntungan: {(total_keuntungan/modal_awal)*100:.2f}%")
+    print("="*60)
+    
+    # Penjelasan perhitungan
+    print("\n" + "="*60)
+    print("PENJELASAN PERHITUNGAN:")
+    print("="*60)
+    print("• Bulan 1-2  : Belum ada laba (0%)")
+    print("• Bulan 3-4  : Laba 1% dari modal awal")
+    print("• Bulan 5-7  : Laba meningkat 5% dari modal awal")
+    print("• Bulan 8    : Laba turun menjadi 3% dari modal awal")
+    print("="*60)
+    
+    return total_keuntungan, total_modal
+
+# Menjalankan program
+if __name__ == "__main__":
+    print("\n*** KALKULATOR KEUNTUNGAN USAHA 8 BULAN ***\n")
+    total_untung, modal_akhir = hitung_keuntungan_usaha()
+    print("\nProgram selesai!")
