@@ -99,7 +99,7 @@ for j in range(len(bilangan_acak)): # Tampilkan hasil
 - Setiap kali program dijalankan akan menghasilkan bilangan yang berbeda
 - Program akan terus mencoba hingga mendapatkan `n` bilangan yang memenuhi kriteria (< 0.5)
 
-      **##LATIHAN 2.PY**
+      **##LATIHAN 3.PY**
 
 # Simulasi Mesin ATM
 
