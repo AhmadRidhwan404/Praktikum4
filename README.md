@@ -2,7 +2,7 @@
 
 **Mata Kuliah : Pengantar Pemrograman**
 
-**#LATIHAN 1.py**
+    **#LATIHAN 1.py**
 # Generator Bilangan Acak Kurang dari 0.5
 
 Program Python sederhana untuk menghasilkan sejumlah bilangan acak yang nilainya lebih kecil dari 0.5.
@@ -66,7 +66,7 @@ Masukkan jumlah bilangan acak (n): 3
    - Mengabaikan bilangan >= 0.5 dan mencoba lagi
 4. **Tampilkan Hasil**: Menggunakan `for` loop untuk menampilkan semua bilangan yang telah dikumpulkan
 
-## 📝 Struktur Kode
+##  Struktur Kode
 
 ```python
 from random import random          # Import fungsi random
@@ -98,3 +98,109 @@ for j in range(len(bilangan_acak)): # Tampilkan hasil
 - Bilangan yang dihasilkan adalah bilangan desimal acak antara 0.0 dan 0.5
 - Setiap kali program dijalankan akan menghasilkan bilangan yang berbeda
 - Program akan terus mencoba hingga mendapatkan `n` bilangan yang memenuhi kriteria (< 0.5)
+
+      **##LATIHAN 2.PY**
+
+# Simulasi Mesin ATM
+
+Program simulasi mesin ATM sederhana yang dibuat menggunakan Python. Program ini memungkinkan pengguna untuk melakukan operasi dasar ATM seperti tarik tunai, cek saldo, dan keluar dari sistem.
+
+##  Fitur
+
+- **Tarik Tunai**: Melakukan penarikan uang dari saldo
+- **Cek Saldo**: Melihat saldo yang tersedia
+- **Format Rupiah**: Menampilkan nilai uang dalam format Rupiah (Rp)
+- **Validasi Input**: Memvalidasi input pengguna untuk mencegah error
+- **Notifikasi Saldo Habis**: Memberitahu pengguna ketika saldo telah habis
+
+##  Cara Menjalankan
+
+### Langkah-langkah
+
+1. **Clone atau download file program**
+   ```bash
+   # Pastikan Anda memiliki file atm_simulator.py
+   ```
+
+2. **Jalankan program**
+   ```bash
+   python atm_simulator.py
+   ```
+
+3. **Ikuti instruksi di layar**
+   - Pilih menu yang diinginkan (1-3)
+   - Masukkan jumlah penarikan jika memilih menu Tarik Tunai
+   - Program akan terus berjalan hingga Anda memilih menu Keluar
+
+## Penggunaan
+
+### Menu Utama
+
+```
+========================================
+SELAMAT DATANG DI ATM
+========================================
+1. Tarik Tunai
+2. Cek Saldo
+3. Keluar
+========================================
+```
+
+### 1. Tarik Tunai
+- Pilih menu 1
+- Masukkan jumlah uang yang ingin ditarik
+- Program akan memvalidasi apakah saldo mencukupi
+- Saldo akan berkurang sesuai jumlah penarikan
+
+### 2. Cek Saldo
+- Pilih menu 2
+- Program akan menampilkan saldo terkini
+
+### 3. Keluar
+- Pilih menu 3
+- Program akan menampilkan saldo akhir dan menutup aplikasi
+
+##  Contoh Penggunaan
+
+```
+*** SIMULASI MESIN ATM ***
+Saldo awal Anda: Rp 1.000.000
+
+========================================
+SELAMAT DATANG DI ATM
+========================================
+1. Tarik Tunai
+2. Cek Saldo
+3. Keluar
+========================================
+Pilih menu (1-3): 1
+
+Saldo tersedia: Rp 1.000.000
+Masukkan jumlah penarikan: Rp 250000
+
+----------------------------------------
+Transaksi Berhasil!
+Jumlah penarikan: Rp 250.000
+Sisa saldo: Rp 750.000
+----------------------------------------
+```
+
+##  Struktur Kode
+
+### Fungsi-fungsi Utama
+
+- **`format_rupiah(angka)`**: Memformat angka menjadi format Rupiah dengan pemisah titik
+- **`tampilkan_menu()`**: Menampilkan menu ATM di layar
+- **`main()`**: Fungsi utama yang menjalankan logika program
+
+
+##  Saldo Awal
+
+Saldo awal default adalah **Rp 1.000.000**. Anda dapat mengubahnya dengan memodifikasi variabel `saldo` di dalam fungsi `main()`:
+
+```python
+saldo = 1000000  # Ubah nilai ini sesuai kebutuhan
+```
+
+
+**Catatan**: Program ini adalah simulasi sederhana untuk tujuan pembelajaran dan tidak terhubung dengan sistem perbankan nyata.
