@@ -1,0 +1,24 @@
+from random import random
+
+# Input nilai n saat runtime
+n = int(input("Masukkan jumlah bilangan acak (n): "))
+
+# List untuk menyimpan bilangan acak
+bilangan_acak = []
+
+# Counter untuk while loop
+i = 0
+
+# Menggunakan while loop untuk menghasilkan n bilangan acak
+while i < n:
+    angka = random()
+    
+    # Cek apakah angka kurang dari 0.5
+    if angka < 0.5:
+        bilangan_acak.append(angka)
+        i += 1
+
+# Menampilkan hasil menggunakan for loop
+print(f"\n{n} bilangan acak yang lebih kecil dari 0.5:")
+for j in range(len(bilangan_acak)):
+    print(f"{j+1}. {bilangan_acak[j]:.6f}")
